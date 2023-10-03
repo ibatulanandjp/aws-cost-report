@@ -1,0 +1,12 @@
+{
+  "accountIds": [
+    "123123123123"
+  ],
+  "currency": "JPY",
+  "timeZoneOffset": {
+    "hours": 9,
+    "minutes": 0
+  },
+  "notificationPlatform": "slack",
+  "webhookUrl": "https://hooks.slack.com/services/A111AA11A1/A11AAAAA111/aAaA1aaaaaa1aAaaaaAA1aA1"
+}

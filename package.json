@@ -8,7 +8,11 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "install-deps": "cd app && npm install && tsc && cd .. && npm install && tsc",
+    "synth": "npm run install-deps && cdk synth",
+    "diff": "npm run install-deps && cdk diff",
+    "deploy": "npm run install-deps && cdk deploy"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
