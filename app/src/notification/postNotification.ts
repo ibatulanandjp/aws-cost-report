@@ -88,17 +88,6 @@ const postMessage = async (eachCostData: ProcessedDataOutput) => {
                     }
                 ]
             });
-            // messageBody.blocks[0].fields.push({
-            //     type: "plain_text",
-            //     // text: `${eachService.keys[1]} \t ${Math.round(eachService.cost.unitcostLOCAL * 10) / 10}`
-            //     text: `${eachService.keys[1]}`
-            // });
-
-            // // console.log(`Service Cost: ${Math.round(eachService.cost.unitcostLOCAL * 10) / 10}`);
-            // messageBody.blocks[0].fields.push({
-            //     type: "plain_text",
-            //     text: `${Math.round(eachService.cost.unitcostLOCAL * 10) / 10}`
-            // });
         }
     });
 
