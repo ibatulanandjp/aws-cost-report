@@ -12,7 +12,8 @@
     "install-deps": "cd app && npm install && tsc && cd .. && npm install && tsc",
     "synth": "npm run install-deps && cdk synth",
     "diff": "npm run install-deps && cdk diff",
-    "deploy": "npm run install-deps && cdk deploy"
+    "deploy": "npm run install-deps && cdk deploy",
+    "destroy": "cdk destroy"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",

@@ -3,6 +3,7 @@ import { Rule, Schedule } from 'aws-cdk-lib/aws-events';
 import { LambdaFunction } from 'aws-cdk-lib/aws-events-targets';
 import { Effect, ManagedPolicy, PolicyStatement, Role, ServicePrincipal } from 'aws-cdk-lib/aws-iam';
 import { Code, Function, Runtime } from 'aws-cdk-lib/aws-lambda';
+import { LogGroup } from 'aws-cdk-lib/aws-logs';
 import { Construct } from 'constructs';
 
 export class AwsCostReportStack extends cdk.Stack {
@@ -30,6 +31,13 @@ export class AwsCostReportStack extends cdk.Stack {
         memorySize: 256,
         timeout: cdk.Duration.seconds(120),
       });
+
+    // Log Group for Lambda
+    const lambdaLogGroup = new LogGroup(this, "CostReportLambdaLogGroup", {
+      logGroupName: `/aws/lambda/${lambdaFunction.functionName}`,
+      retention: 14,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
+    })
 
     // Add policy to the Lambda funcction to access and get cost and usage from Cost Explorer
     lambdaFunction.addToRolePolicy(new PolicyStatement({
