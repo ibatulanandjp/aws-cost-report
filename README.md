@@ -46,7 +46,7 @@ The application can be configured using the following options in the `/app/src/c
 | Configuration Attribute | Description                                                                  | Value Options                                                                                                                                   |
 | ----------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | accountIds              | List of AWS account IDs for which notifications will be sent.                | Array of AWS account IDs (For Multi-account Architecture),  Array with 1 account ID (For Single-account Architecture)                           |
-| currency                | The preferred currency for cost calculations.                                | Currency codes available at [Open Exchange Rates](https://open.er-api.com/v6/latest/USD) (e.g., JPY, INR, etc.)                                                                          |
+| currency                | The preferred currency for cost calculations.                                | Currency codes available at [Open Exchange Rates](https://open.er-api.com/v6/latest/USD) (e.g., JPY, INR, etc.)                                 |
 | timeZoneOffset          | Timezone offset in hours and minutes.                                        | Object with "hours" and "minutes" properties denoting time offset from UTC (e.g., Japan Standard Time is UTC +09:00 {"hours": 9, "minutes": 0}) |
 | notificationPlatform    | The platform for notifications (slack or teams).                             | "slack" or "teams"                                                                                                                              |
 | webhookUrl              | Webhook URL for the Slack or Teams channel where notifications will be sent. | Valid Slack or Teams webhook URL                                                                                                                |
@@ -100,14 +100,14 @@ To deploy the application, follow these steps:
    git clone https://github.com/ibatulanandjp/aws-cost-report.git
    ```
 
-2. Configure the application at `/app/src/config/config.json` by referring to above configuration details.
+2. Configure the application at `/app/src/config/config.json` by referring to the above configuration details.
 
 3. Configure AWS CLI to use the profile or set credentials for the account, which you want to deploy the application into.
    ```sh
    export AWS_PROFILE=<aws-profile-name>
    ```
 
-   (For more details, see [reference](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html))
+   (For more details, see the [reference](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html))
 
    You can confirm this by running the following command:
    ```sh
@@ -132,13 +132,13 @@ To deploy the application, follow these steps:
    cdk bootstrap aws://ACCOUNT-NUMBER/REGION
    ```
 
-   For more details, see [reference](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html), and the deployment after bootstrap should complete successfully. 
+   For more details, see the [reference](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html), and the deployment after bootstrap should complete successfully. 
 
 
 The application will be deployed to your AWS environment, and the specified notifications will be sent daily at the configured time.
 
 #### Other available commands
-1. Check diff of the stack after making any change:
+1. Check the diff of the stack after making any changes:
    ```sh
    npm run diff
    ``` 
